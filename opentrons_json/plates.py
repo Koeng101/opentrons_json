@@ -2,7 +2,7 @@ import string
 from itertools import groupby
 
 class Plate():
-    def __init__(self, height, length):
+    def __init__(self, height:int, length:int) -> None:
         positions = []
         for letter in list(string.ascii_uppercase[0:height]):
             for number in range(length):
@@ -15,3 +15,15 @@ class Plate():
 
 standard96 = Plate(8,12)
 standard384 = Plate(16,24)
+
+
+
+class TipRack(Plate):
+    def __init__(self,height:int,length:int,mode:str):
+        super(TipRack,self).__init__(height,length)
+        modes = ["single_single","multi_multi","multi_range"]
+        if mode not in modes:
+            raise ValueError("Mode not in modes")
+        self.mode = mode
+
+
