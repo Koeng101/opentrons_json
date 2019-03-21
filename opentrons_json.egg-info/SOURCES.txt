@@ -1,0 +1,9 @@
+README.md
+setup.py
+opentrons_json/__init__.py
+opentrons_json/commands.py
+opentrons_json/plates.py
+opentrons_json.egg-info/PKG-INFO
+opentrons_json.egg-info/SOURCES.txt
+opentrons_json.egg-info/dependency_links.txt
+opentrons_json.egg-info/top_level.txt
