@@ -88,3 +88,39 @@ default_values = {
         "dispense-mm-from-bottom": 0.5,
         "touch-tip-mm-from-top": -1
     }
+
+class Protocol():
+    def __init__(self,robot:dict,labware:dict,procedure:dict,protocol_schema:str='1.0.0',metadata:dict={},defaults:dict=default_values,designer_application:dict=designer_application,pipettes:dict={}):
+        # Metadata
+        self.protocol_schema = protocol_schema
+        self.metadata = metadata
+
+        # Defaults
+        self.defaults = defaults
+
+        #Designer application
+        self.designer_application = designer_application
+
+        # Pipettes
+        if pipettes == {}:
+            self.pipettes = {
+                robot['left_10']: pipette("left", "p10_multi", "p10_multi_v1.3"),
+                robot['right_300']: pipette("right", "p300_multi", "p300_multi_v1.3")
+            }
+        else:
+            self.pipettes = pipettes
+
+        self.labware = labware
+        self.procedure=procedure
+
+    def toJSON(self):
+         return {
+             "protocol-schema": self.protocol_schema,
+             "metadata": self.metadata,
+             "default-values": self.defaults,
+             "designer-application": self.designer_application,
+             "robot": ot2_standard,
+             "pipettes": self.pipettes,
+             "labware": self.labware,
+             "procedure": self.procedure}
+
