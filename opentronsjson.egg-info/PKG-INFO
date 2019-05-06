@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
-Name: opentrons-json
-Version: 0.0.2
+Name: opentronsjson
+Version: 0.0.3
 Summary: A library that makes generating opentrons_json protocols easier
 Home-page: UNKNOWN
 Author: Keoni Gandall

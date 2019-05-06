@@ -1,5 +1,5 @@
 
-name = "opentrons_json"
+name = "opentronsjson"
 
 
 # Labware
@@ -44,7 +44,16 @@ def pipette(mount:str,name:str,model:str) -> dict:
         "p300_single_v1.3",
         "p300_multi_v1.3",
         "p1000_single_v1.3",
-        "p1000_multi_v1.3"]
+        "p1000_multi_v1.3",
+
+        "p10_single_v1.5",
+        "p10_multi_v1.5",
+        "p50_single_v1.5",
+        "p50_multi_v1.5",
+        "p300_single_v1.5",
+        "p300_multi_v1.5",
+        "p1000_single_v1.5",
+        "p1000_multi_v1.5"]
     if model not in pipette_models:
         return ValueError("Name not included in pipette_models")
 
