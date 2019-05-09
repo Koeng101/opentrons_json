@@ -18,7 +18,7 @@ class Plate():
     def rows(self)-> list:
         return [list(g) for k, g in groupby(self.locations, key=lambda x: x[0])]
     def columns(self) -> list:
-        return [[x for x in self.locations if x[1:] == str(num+1)] for num in range(self.length)]
+        return [sorted(y) for y in [[x for x in self.locations if x[1:] == str(num+1)] for num in range(self.length)]]
     def reverse_columns(self)-> list:
         return [sorted(x, reverse=True) for x in self.columns()]
     def flat_columns(self) -> list:
