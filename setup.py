@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="opentronsjson",
-    version="0.0.3",
+    version="0.0.5",
     author="Keoni Gandall",
     author_email="koeng101@gmail.com",
     description="A library that makes generating opentrons_json protocols easier",

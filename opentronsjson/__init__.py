@@ -106,15 +106,15 @@ class Protocol():
         
         # Defaults
         if defaults == {}:
-            self.defaults = opentronsjson.default_values
+            self.defaults = default_values
         else:
             self.defaults = defaults
             
         # Pipettes 
         if pipettes == {}:
             self.pipettes = {
-                robot['left_10']: opentronsjson.pipette("left", "p10_multi", "p10_multi_v1.5"),
-                robot['right_300']: opentronsjson.pipette("right", "p300_multi", "p300_multi_v1.5")
+                robot['left_10']: pipette("left", "p10_multi", "p10_multi_v1.5"),
+                robot['right_300']: pipette("right", "p300_multi", "p300_multi_v1.5")
             }
         else:
             self.pipettes = pipettes
@@ -127,7 +127,7 @@ class Protocol():
              "protocol-schema": self.protocol_schema,
              "metadata": self.metadata,
              "default-values": self.defaults,
-             "robot": opentronsjson.ot2_standard,
+             "robot": ot2_standard,
              "pipettes": self.pipettes,
              "labware": self.labware,
              "procedure": self.procedure}
