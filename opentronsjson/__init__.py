@@ -3,12 +3,15 @@ name = "opentronsjson"
 
 
 # Labware
-def labware(slot:str,labware_type:str,name=None) -> dict:
-    return {
+def labware(slot:str,labware_type:str,name=None,display_name=None) -> dict:
+    dictionary = {
       "slot": slot,
       "model": labware_type,
-      "name": name
+      "name": name,
     }
+    if display_name != None:
+        dictionary['display-name'] = display_name
+    return dictionary
 
 # Instruments
 def pipette(mount:str,name:str,model:str) -> dict:
